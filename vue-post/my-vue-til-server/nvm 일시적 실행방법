@@ -1,0 +1,4 @@
+
+1. source ~/.nvm/nvm.sh
+2. nvm isntall [node version] :: 10.16.3
+3. npm run dev
