@@ -1,0 +1,258 @@
+@import 'common/_reset';
+
+#app {
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+// Header 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+  background-color: #101010;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  a {
+    display: block;
+    font-size: 16px;
+    color: #dedede;
+    line-height: 50px;
+    &.logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #dedede;
+    }
+  }
+  nav {
+    display: flex;
+    margin-left: auto;
+    ul {
+      display: flex;
+      li {
+        margin-right: 10px;
+      }
+    }
+    span {
+      margin-right: 12px;
+      font-size: 16px;
+      color: #fff;
+      line-height: 48px;
+    }
+    a {
+      &.router-link-exact-active {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Login & Signup Page
+.app-contents {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  h2 {
+    margin: 0 0 16px;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+  }
+  .log-message {
+    width: 100%;
+    line-height: 1;
+  }
+  .contents {
+    margin: 16px 0 0;
+    form {
+      label {
+        display: block;
+        width: 0;
+        height: 0;
+        font-size: 0;
+      }
+      input {
+        padding: 0 10px;
+        margin: 0 0 10px;
+        width: 240px;
+        line-height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        &::placeholder {
+          color: #aaa;
+          font-size: 14px;
+        }
+      }
+    }
+    button, .signup_link {
+      display: block;
+      margin: 8px 0;
+      width: 100%;
+      background-color: #4a48bb;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      line-height: 38px;
+      border-radius: 4px;
+      &:hover {
+        background-color: #5653e2;
+      }
+    }
+  }
+}
+
+// Main Page
+.main-contents {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 16px;
+  height: 100%;
+  box-sizing: border-box;
+  h2 {
+    margin: 40px 0;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+  }
+  .post-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: flex-start;
+    li {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: flex-start;
+      padding: 20px;
+      margin: 20px 10px;
+      max-width: 300px;
+      min-width: 240px;
+      min-height: 160px;
+      border-radius: 8px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      > div {
+        width: 100%;
+      }
+      .post-title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+      }
+      .post-contents {
+        margin: 10px 0;
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: normal;
+        word-break: break-all;
+      }
+      .post-time {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: auto;
+        font-size: 12px;
+        color: #aaa;
+        line-height: 20px;
+        i {
+          margin-left: 8px;
+          color: #4a48bb;
+          font-size: 20px;
+        }
+      }
+      &.button-wrap {
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  }
+  .create-button {
+    display: block;
+    margin: 0;
+    padding: 0 20px;
+    width: 200px;
+    height: 40px;
+    background-color: #4a48bb;
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    i {
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: #5653e2;
+    }
+  }
+  // Post Add Page & Post Edit Page
+  &.post-contents {
+    form {
+      min-width: 320px;
+      > div {
+        margin: 0 0 20px;
+        label {
+          display: block;
+          margin: 0 0 8px;
+          font-size: 16px;
+        }
+        input {
+          padding: 0 10px;
+          width: 100%;
+          line-height: 40px;
+          border: 2px solid #ddd;
+          border-radius: 4px;
+        }
+        textarea {
+          padding: 10px;
+          min-height: 160px;
+          width: 100%;
+          line-height: 20px;
+          border: 2px solid #ddd;
+          border-radius: 4px;
+        }
+        .warning {
+          margin: 4px 0 0;
+        }
+      }
+      button {
+        display: block;
+        width: 100%;
+        background-color: #4a48bb;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 38px;
+        border-radius: 4px;
+        &:hover {
+          background-color: #5653e2;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------
+// Warning Message
+.warning {
+  margin: 0 0 10px;
+  color: #f45353;
+  font-size: 14px;
+}
+// error message
+.log-message {
+  color: #e64343;
+  line-height: 48px;
+  text-align: center;
+}
