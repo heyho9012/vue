@@ -61,7 +61,7 @@ export default new Vuex.Store({
     },
     completeAllItem(state) {
       state.todoItems.forEach(todoItem => {
-        todoItem.completed = true
+        todoItem.completed = !todoItem.completed
         localStorage.removeItem(todoItem.item)
         localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
       })

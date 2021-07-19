@@ -12,7 +12,7 @@
     >
       <li
         v-for="(todoItem, index) in this.storedTodoItems"
-        :key="todoItem.item + todoItem.index"
+        :key="todoItem.item + index"
         class="list-item"
       >
         <input
@@ -24,13 +24,16 @@
         <label :for="todoItem.item"
           ><i class="icon ion-md-checkmark"></i
         ></label>
-        <p>
-          {{ todoItem.item }}
-        </p>
+        <p>{{ todoItem.item }}</p>
         <div>
-          <button class="todo-button" type="button" title="edit">
+          <!-- <button
+            class="todo-button"
+            type="button"
+            title="edit"
+            @click="inputOption = !inputOption"
+          >
             <i class="icon ion-md-create"></i>
-          </button>
+          </button> -->
           <button
             class="todo-button delete-button"
             type="button"
@@ -55,6 +58,12 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   components: {
     draggable,
+  },
+  data() {
+    return {
+      inputOption: false,
+      eventValue: '',
+    }
   },
   computed: {
     ...mapGetters(['storedTodoItems']),
