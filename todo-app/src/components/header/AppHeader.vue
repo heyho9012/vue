@@ -1,6 +1,8 @@
 <template>
   <header class="header">
-    <router-link to="/main" class="to-home">Home</router-link>
+    <router-link v-show="$route.name !== 'Main'" to="/main" class="to-home"
+      >Home</router-link
+    >
     <h1>todo application</h1>
   </header>
 </template>

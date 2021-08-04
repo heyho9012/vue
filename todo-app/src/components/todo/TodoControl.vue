@@ -10,7 +10,7 @@
     <button
       type="button"
       class="control-button complete-button"
-      :class="{ active: this.$store.state.todoItems.completed }"
+      :class="{ active: $store.state.todoItems.completed }"
       @click="completeTodo"
       title="completed all"
     >

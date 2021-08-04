@@ -1,17 +1,12 @@
 <template>
-  <draggable
-    class="todo-list"
-    :list="this.storedTodoItems"
-    :options="{ animation: 300, handle: '.list-item' }"
-  >
-    <transition-group
-      type="transition"
+  <div class="todo-list">
+    <draggable
       tag="ul"
-      name="list"
-      v-if="this.storedTodoItems !== ''"
+      :list="storedTodoItems"
+      :options="{ animation: 300, handle: '.list-item' }"
     >
       <li
-        v-for="(todoItem, index) in this.storedTodoItems"
+        v-for="(todoItem, index) in storedTodoItems"
         :key="todoItem.item + index"
         class="list-item"
       >
@@ -26,14 +21,6 @@
         ></label>
         <p>{{ todoItem.item }}</p>
         <div>
-          <!-- <button
-            class="todo-button"
-            type="button"
-            title="edit"
-            @click="inputOption = !inputOption"
-          >
-            <i class="icon ion-md-create"></i>
-          </button> -->
           <button
             class="todo-button delete-button"
             type="button"
@@ -44,11 +31,11 @@
           </button>
         </div>
       </li>
-    </transition-group>
-    <div class="enjoy" v-else>
+    </draggable>
+    <div class="enjoy" v-show="storedTodoItems == ''">
       Enjoy todo app
     </div>
-  </draggable>
+  </div>
 </template>
 
 <script>
